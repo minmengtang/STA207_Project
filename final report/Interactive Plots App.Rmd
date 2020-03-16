@@ -1,0 +1,24 @@
+---
+title: Use ExPanD to have interactive plots
+output: html_notebook
+---
+ 
+```{r, include=F,message=F}
+library(ExPanDaR)
+```
+ 
+```{r}
+bank <- read.csv('bank-full.csv', header = T, sep = ";")
+```
+
+```{r, message=F, include=F, warning=F}
+ExPanD(df = bank, 
+       title = "Explore the Bank Data",
+       components = c(bar_chart = TRUE,
+                      histogram = TRUE,
+                      by_group_bar_graph = TRUE,
+                      by_group_violin_graph = TRUE, 
+                      scatter_plot = TRUE 
+                      ))
+```
+ 
